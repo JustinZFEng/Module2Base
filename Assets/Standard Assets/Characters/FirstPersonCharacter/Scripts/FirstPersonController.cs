@@ -91,6 +91,14 @@ namespace UnityStandardAssets.Characters.FirstPerson
             m_NextStep = m_StepCycle + .5f;
         }
 
+        void OnTriggerEnter(Collider other)
+        {
+            if (other.gameObject.CompareTag("Pick Up"))
+            {
+                other.gameObject.SetActive(false);
+            }
+        }
+        
 
         private void FixedUpdate()
         {
